@@ -8,7 +8,13 @@ public class Profil {
     private static final int MAX_FEMME = 30;
     private static final int MIN_HOMME = 15;
     private static final int MAX_HOMME = 20;
+    /**
+     * Message qui doit être affiché en fonction de l'img
+     */
     private static final String[] MESSAGE = {"trop faible", "normal", "trop élevé"};
+    /**
+     * Image qui doit être affiché en fonction de l'img
+     */
     private static final String[] IMAGE = {"maigre", "normal", "graisse"};
     private Integer poids;
     private Integer taille;
@@ -37,7 +43,7 @@ public class Profil {
     /**
      * Retourne l'img
      *
-     * @return
+     * @return img
      */
     public double getImg() {
         return img;
@@ -46,7 +52,7 @@ public class Profil {
     /**
      * Retourne le message
      *
-     * @return
+     * @return MESSAGE
      */
     public String getMessage() {
         return MESSAGE[indice];
@@ -55,7 +61,7 @@ public class Profil {
     /**
      * Retourne l'image
      *
-     * @return
+     * @return IMAGE
      */
     public String getImage() {
         return IMAGE[indice];
@@ -64,7 +70,7 @@ public class Profil {
     /**
      * Retourne vrai si l'indice correspond à "normal" et faux dans le cas contraire
      *
-     * @return
+     * @return true or false
      */
     public boolean normal() {
         return indice==1;
@@ -73,7 +79,7 @@ public class Profil {
     /**
      * Méthode permettant de calculer l'img
      *
-     * @return
+     * @return calcul result
      */
     private double calculImg() {
         double tailleInMeter = taille/100.0;
@@ -82,7 +88,8 @@ public class Profil {
 
     /**
      * Méthode permettant de déterminer la valeur de l'indice
-     * @return
+     *
+     * @return 0, 1 or 2
      */
     private int calculIndice() {
         int min = (sexe == 0) ? MIN_FEMME : MIN_HOMME;
@@ -94,6 +101,5 @@ public class Profil {
             return 1; // dans la norme
         }
         return 0; // en dessous de la norme
-
     }
 }
