@@ -13,5 +13,14 @@ public interface ICalculView {
      * @param normal
      */
     void afficherResultat(String image, double img, String message, boolean normal);
+
+    /**
+     * Méthode qui permet de remplir les champs dans la vue
+     *
+     * @param poids
+     * @param taille
+     * @param age
+     * @param sexe
+     */
     void remplirChamps(Integer poids, Integer taille, Integer age, Integer sexe);
 }

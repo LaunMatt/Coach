@@ -22,8 +22,8 @@ public class Profil {
     private Integer taille;
     private Integer age;
     private Integer sexe;
-    private double img;
-    private int indice;
+    private transient double img;
+    private transient int indice;
     Date dateMesure;
 
     /**
