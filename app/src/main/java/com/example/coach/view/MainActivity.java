@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
     }
 
     /**
-     * Méthode permettant l'affichage des éléments de résultat de l'application
+     * Méthode qui permet l'affichage des éléments de résultat de l'application
      *
      * @param image
      * @param img
@@ -74,6 +74,14 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
         lblIMG.setTextColor(normal ? Color.GREEN : Color.RED);
     }
 
+    /**
+     * Méthode qui permet de remplir les champs
+     *
+     * @param poids
+     * @param taille
+     * @param age
+     * @param sexe
+     */
     @Override
     public void remplirChamps(Integer poids, Integer taille, Integer age, Integer sexe) {
         txtPoids.setText(poids.toString());
@@ -105,7 +113,8 @@ public class MainActivity extends AppCompatActivity implements ICalculView {
      */
     private void init() {
         chargeObjetsGraphiques();
-        presenter = new CalculPresenter(this);
+        presenter = new CalculPresenter(this, this);
+        presenter.chargerDernierProfil();
         btnCalc.setOnClickListener(v -> btnCalc_clic());
     }
 
