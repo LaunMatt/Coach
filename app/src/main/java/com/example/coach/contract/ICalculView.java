@@ -1,9 +1,9 @@
 package com.example.coach.contract;
 
 /**
- * Interface permettant le lien entre la vue et le presenter
+ * Interface qui permet le lien entre la vue et le presenter
  */
-public interface ICalculView {
+public interface ICalculView extends IAllView {
     /**
      * Méthode qui permet le transfert des résultats vers la vue
      *
